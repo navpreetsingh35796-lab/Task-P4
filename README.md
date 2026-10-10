@@ -1,53 +1,16 @@
-# DEV@Deakin - Authentication & Routing Web Platform
+# React + Vite
 
-A React single-page application built for the DEV@Deakin platform featuring persistent navigation, client-side routing, Firebase Cloud Firestore integration, and secure password hashing using bcrypt.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **Client-Side Routing (`react-router-dom`):** Seamless page navigation across Home (`/`), Login (`/login`), and Sign-up (`/signup`) routes.
-- **Shared Layout Shell:** A persistent header navigation bar and multi-column footer wrapping child route outlets.
-- **Secure Registration:** Form validation enforcing email standards, minimum password length, and password matching before storage.
-- **Password Encryption (`bcryptjs`):** Passwords are salted and hashed on the client before saving to ensure plain text passwords are never stored in the database.
-- **Database Persistence (Cloud Firestore):** User credentials and registration timestamps stored securely under the `users` collection.
-- **Credential Verification & Error Handling:** Compares submitted passwords against stored bcrypt hashes, displaying contextual error messages when records do not match or accounts are missing.
-- **Environment Variable Protection:** Firebase configuration stored in `.env` and kept untracked via `.gitignore`.
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Tech Stack
+## Expanding the ESLint configuration
 
-- **Frontend:** React 18, Vite, React Router v6, CSS3
-- **Database:** Google Firebase (Cloud Firestore)
-- **Security:** `bcryptjs`
-- **Version Control:** Git, GitLab / GitHub
-
----
-
-## Project Structure
-
-```text
-task-p4/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── Footer.jsx
-│   │   ├── Layout.jsx
-│   │   └── Navbar.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Login.jsx
-│   │   └── Signup.jsx
-│   ├── App.css
-│   ├── App.jsx
-│   ├── firebase.js
-│   ├── index.css
-│   └── main.jsx
-├── .env                  # (Untracked) Firebase credentials
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-└── vite.config.js
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
